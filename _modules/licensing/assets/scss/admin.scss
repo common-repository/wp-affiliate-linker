@@ -1,0 +1,609 @@
+/**
+* This file contains global Admin UI CSS that's used across all Plugins.
+*
+* If an Admin UI element is used in the majority of our plugins, then include its CSS
+* here.
+*
+* If an Admin UI element is used in one or a minority of our plugins, include its CSS
+* in its own admin.css file.
+*/
+
+/**
+ * About Screen UI
+ */
+.about-wrap {
+	.about-text {
+		min-height: auto;
+	}
+
+	form {
+		label {
+			display: block;
+			margin: 0 200px 20px 0;
+			
+			.description {
+				margin: 5px 0 0 25px;
+			}
+
+			input[type=text] {
+				width: 100%;
+				margin: 0 0 0 25px;
+			}
+		}
+	}
+}
+
+/**
+ * Settings UI - Header
+ */
+.wrap {
+	> h2 {
+		span.dashicons {
+			line-height: 30px;
+		}
+	}
+ 	> .description {
+ 		padding: 10px 0;
+ 		font-size: 14px;
+ 	}
+ }
+
+/**
+ * Settings UI - Admin Interface
+ */
+.option { 
+	padding: 10px 15px !important;
+	border-width: 1px 0; 
+	border-style: solid; 
+	border-top-color: #fff; 
+	border-bottom-color: #dfdfdf; 
+	background-color: #f5f5f5;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+	/**
+	 * Alternate background
+	 */
+	&:nth-child(odd) {
+		background: #fcfcfc; 
+	}
+
+	/**
+    * Clearfix
+    */
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+	/**
+	 * Two column layout
+	 */
+	.left {
+		width: 160px;
+		-webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+		/**
+		* Elements must be floated, so the .right column lines up vertically
+		*/
+		* {
+			float: left;
+		}
+
+		/**
+		* Apply line height to all items except inputs
+		*/
+		*:not(input) {
+			line-height: 27px;
+		}
+	}
+	.right {
+		margin: 0 0 0 165px; /* Must match .left plus whatever margin we want */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        /**
+		* Apply line heights
+		*/
+		line-height: 27px;
+		strong {
+			line-height: 27px;
+		}
+
+		/**
+		 * Success / Error Colors
+		 */
+		.success {
+			color: green;
+		}
+		.error {
+			color: red;
+		}
+	}
+
+	/**
+	* One column layout
+	*/
+	.full {
+		clear: both;
+		float: left;
+		width: 100%;
+		margin: 0 0 10px 0;
+		line-height: 30px;
+	}
+
+	/**
+	* Labels
+	*/
+	label {
+	 	line-height: 27px;
+	}
+
+	/**
+	* Elements
+	*/
+	select.right,
+	input.right {
+		float: right;
+	}
+}
+
+/**
+* Settings UI - Sidebar
+*/
+#postbox-container-1 {
+	.option {
+		.left {
+			width: 120px;
+		}
+		.right {
+			margin: 0 0 0 120px;
+			text-align: right;
+		}
+	}
+}
+
+/**
+* Settings UI - Items in Headers
+*/
+.postbox {
+	.hndle {
+		.right {
+			float: right;
+
+			/**
+			* Buttons
+			*/
+			&.button {
+				margin-top: -3px;
+			}
+		}
+
+		/**
+		* Input & Select
+		*/
+		input.right,
+		select.right {
+			margin-top: -3px;
+		}	
+	}
+}
+
+/**
+* Settings UI - TinyMCE Popups
+*/
+body.lum-tinymce-popup {
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * Tabs UI
+ */
+.nav-tab-wrapper.needs-js { 
+	display: none; 
+}
+.nav-tab-wrapper {
+	a {
+		&.last {
+			float: right;
+		}
+		
+		span.tab-icon {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background-size: 20px 20px !important;
+		}
+
+		/**
+		 * Remove focus shadow on tabs
+		 */
+		&:focus {
+			box-shadow: none;
+			-webkit-box-shadow: none;
+		}
+	}
+}
+
+/**
+ * Tabs UI in a Post Meta Box
+ */
+#poststuff {
+	.nav-tab-wrapper {
+		padding: 0;
+		border-bottom: 1px solid #e5e5e5; /* Matches metabox border */
+
+		a {
+			border-left: 1px solid #e5e5e5;
+			border-top: 1px solid #e5e5e5;
+			border-right: 1px solid #e5e5e5;
+			border-bottom: none;
+
+			&.nav-tab-active {
+				background: #fff;
+				border-bottom: 1px solid #fff;;
+			}
+		}
+	}
+}
+
+/**
+ * Addons
+ */
+.plugin-card {
+	position: relative;
+	min-height: 270px;
+
+	&.active {
+		border-left: 3px solid #00a0d2;
+		background: #f7fcfe;
+	}
+	&.inactive {
+
+	}
+
+	.plugin-card-bottom {
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    	box-sizing: border-box;
+	}
+}
+
+/**
+ * Warning Notices
+ */
+div.notice.warning {
+	border-left-color: orange;
+}
+
+/**
+ * Tooltip Styles
+ */
+/* Base styles for the element that has a tooltip */
+[data-tooltip],
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Base styles for the entire tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after {
+  position: absolute;
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: 
+	  opacity 0.2s ease-in-out,
+		visibility 0.2s ease-in-out,
+		-webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+	-moz-transition:    
+		opacity 0.2s ease-in-out,
+		visibility 0.2s ease-in-out,
+		-moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+	transition:         
+		opacity 0.2s ease-in-out,
+		visibility 0.2s ease-in-out,
+		transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform:    translate3d(0, 0, 0);
+  transform:         translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+/* Show the entire tooltip on hover and focus */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* Base styles for the tooltip's directional arrow */
+.tooltip:before,
+[data-tooltip]:before {
+  z-index: 1001;
+  border: 6px solid transparent;
+  background: transparent;
+  content: "";
+}
+
+/* Base styles for the tooltip's content area */
+.tooltip:after,
+[data-tooltip]:after {
+  z-index: 1000;
+  padding: 8px;
+  width: 160px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Directions */
+
+/* Top (default) */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after,
+.tooltip-top:before,
+.tooltip-top:after {
+  bottom: 100%;
+  left: 50%;
+}
+
+[data-tooltip]:before,
+.tooltip:before,
+.tooltip-top:before {
+  margin-left: -6px;
+  margin-bottom: -12px;
+  border-top-color: #000;
+  border-top-color: hsla(0, 0%, 20%, 0.9);
+}
+
+/* Horizontally align top/bottom tooltips */
+[data-tooltip]:after,
+.tooltip:after,
+.tooltip-top:after {
+  margin-left: -80px;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after,
+.tooltip-top:hover:before,
+.tooltip-top:hover:after,
+.tooltip-top:focus:before,
+.tooltip-top:focus:after {
+  -webkit-transform: translateY(-12px);
+  -moz-transform:    translateY(-12px);
+  transform:         translateY(-12px); 
+}
+
+/* Left */
+.tooltip-left:before,
+.tooltip-left:after {
+  right: 100%;
+  bottom: 50%;
+  left: auto;
+}
+
+.tooltip-left:before {
+  margin-left: 0;
+  margin-right: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-left-color: #000;
+  border-left-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-left:hover:before,
+.tooltip-left:hover:after,
+.tooltip-left:focus:before,
+.tooltip-left:focus:after {
+  -webkit-transform: translateX(-12px);
+  -moz-transform:    translateX(-12px);
+  transform:         translateX(-12px); 
+}
+
+/* Bottom */
+.tooltip-bottom:before,
+.tooltip-bottom:after {
+  top: 100%;
+  bottom: auto;
+  left: 50%;
+}
+
+.tooltip-bottom:before {
+  margin-top: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-bottom-color: #000;
+  border-bottom-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-bottom:hover:before,
+.tooltip-bottom:hover:after,
+.tooltip-bottom:focus:before,
+.tooltip-bottom:focus:after {
+  -webkit-transform: translateY(12px);
+  -moz-transform:    translateY(12px);
+  transform:         translateY(12px); 
+}
+
+/* Right */
+.tooltip-right:before,
+.tooltip-right:after {
+  bottom: 50%;
+  left: 100%;
+}
+
+.tooltip-right:before {
+  margin-bottom: 0;
+  margin-left: -12px;
+  border-top-color: transparent;
+  border-right-color: #000;
+  border-right-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-right:hover:before,
+.tooltip-right:hover:after,
+.tooltip-right:focus:before,
+.tooltip-right:focus:after {
+  -webkit-transform: translateX(12px);
+  -moz-transform:    translateX(12px);
+  transform:         translateX(12px); 
+}
+
+/* Move directional arrows down a bit for left/right tooltips */
+.tooltip-left:before,
+.tooltip-right:before {
+  top: 3px;
+}
+
+/* Vertically center tooltip content for left/right tooltips */
+.tooltip-left:after,
+.tooltip-right:after {
+  margin-left: 0;
+  margin-bottom: -16px;
+}
+
+/**
+* Clipboard Button
+*/
+a.dashicons-clipboard.button {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #23282d;
+	vertical-align: bottom;
+	
+	span {
+		display: block;
+		text-indent: -9999px;
+	}
+}
+
+/**
+ * Red Button
+ */
+.wp-core-ui .button-red {
+	background-color: #9B2124;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#C5292E), to(#9B2124));
+	background-image: -webkit-linear-gradient(top, #C5292E, #9B2124);
+	background-image:    -moz-linear-gradient(top, #C5292E, #9B2124);
+	background-image:     -ms-linear-gradient(top, #C5292E, #9B2124);
+	background-image:      -o-linear-gradient(top, #C5292E, #9B2124);
+	background-image:   linear-gradient(to bottom, #C5292E, #9B2124);
+	border-color: #9B2124;
+	border-bottom-color: #8D1F21;
+	-webkit-box-shadow: inset 0 1px 0 rgba(120,200,230,0.5);
+ 	box-shadow: inset 0 1px 0 rgba(120,200,230,0.5);
+ 	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+}
+.wp-core-ui .button-red.hover,
+.wp-core-ui .button-red:hover,
+.wp-core-ui .button-red.focus,
+.wp-core-ui .button-red:focus {
+	background-color: #B72629;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#D22E30), to(#9B2124));
+	background-image: -webkit-linear-gradient(top, #D22E30, #9B2124);
+	background-image:    -moz-linear-gradient(top, #D22E30, #9B2124);
+	background-image:     -ms-linear-gradient(top, #D22E30, #9B2124);
+	background-image:      -o-linear-gradient(top, #D22E30, #9B2124);
+	background-image:   linear-gradient(to bottom, #D22E30, #9B2124);
+	border-color: #7F1C1F;
+	-webkit-box-shadow: inset 0 1px 0 rgba(120,200,230,0.6);
+ 	box-shadow: inset 0 1px 0 rgba(120,200,230,0.6);
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+}
+.wp-core-ui .button-red.focus,
+.wp-core-ui .button-red:focus {
+	border-color: #500F0E;
+	-webkit-box-shadow: inset 0 1px 0 rgba(120,200,230,0.6), 1px 1px 2px rgba(0,0,0,0.4);
+	box-shadow: inset 0 1px 0 rgba(120,200,230,0.6), 1px 1px 2px rgba(0,0,0,0.4);
+}
+.wp-core-ui .button-red.active,
+.wp-core-ui .button-red.active:hover,
+.wp-core-ui .button-red.active:focus,
+.wp-core-ui .button-red:active {
+	background: #7F1C1F;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#9B2124), to(#B72629));
+	background-image: -webkit-linear-gradient(top, #9B2124, #B72629);
+	background-image:    -moz-linear-gradient(top, #9B2124, #B72629);
+	background-image:     -ms-linear-gradient(top, #9B2124, #B72629);
+	background-image:      -o-linear-gradient(top, #9B2124, #B72629);
+	background-image:   linear-gradient(to bottom, #9B2124, #B72629);
+	border-color: #601312 #AE2426 #AE2426 #AE2426;
+	color: rgba(255,255,255,0.95);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1);
+ 	box-shadow: inset 0 1px 0 rgba(0,0,0,0.1);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+}
+.wp-core-ui .button-red[disabled],
+.wp-core-ui .button-red:disabled,
+.wp-core-ui .button-red-disabled {
+	color: #E79496 !important;
+	background: #BA292B !important;
+	border-color: #7F1C1F !important;
+	-webkit-box-shadow: none !important;
+	box-shadow:         none !important;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.1) !important;
+	cursor: default;
+}
+
+/**
+* Taxonomy Term Checkboxes
+*/
+.tax-selection {
+	.tabs-panel { 
+		height: 200px !important;
+		overflow: auto; 
+		padding: 10px 15px;
+		border-left: none;
+		border-top: none;
+		border-right: none;
+		border-bottom: none;
+		background: #fff;
+
+		ul.categorychecklist {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
